@@ -10,19 +10,27 @@ function App() {
 
   return (
     <div className="App">
-      <span>Count: {count}</span>
+      <header className="header">Header</header>
+      <aside className="sidebar">Sidebar</aside>
+      <main className="main">
+        <span>Count: {count}</span>
 
-      <button onClick={() => dispath(asyncIncrementAC())}>INCREMENT</button>
+        <button onClick={() => dispath(asyncIncrementAC())}>INCREMENT</button>
 
-      <hr />
+        <hr />
 
-      <button onClick={() => dispath(fetchAlbumsAC())}>FETCH USERS</button>
+        <button onClick={() => dispath(fetchAlbumsAC())}>FETCH USERS</button>
 
-      {albums.length ? (
-        albums.map((album, index) => <div key={index}>{album.title}</div>)
-      ) : (
-        <span>List with albums empty</span>
-      )}
+        {albums.length ? (
+          albums.map((album, index) => <div key={index}>{album.title}</div>)
+        ) : (
+          <span>List with albums empty</span>
+        )}
+      </main>
+      <div className="content1">Content 1</div>
+      <div className="content2">Content 2</div>
+      <div className="content3">Content 3</div>
+      <footer className="footer">Footer</footer>
     </div>
   );
 }

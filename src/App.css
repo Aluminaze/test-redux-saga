@@ -1,40 +1,61 @@
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
+  grid-template-areas:
+    "hdr hdr hdr hdr"
+    "sdb main main main"
+    "sdb cnt1 cnt2 cnt3"
+    "sdb ftr ftr ftr";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  grid-area: hdr;
+  background-color: #61dafb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+  grid-area: sdb;
+  background-color: aquamarine;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main {
+  grid-area: main;
+  background-color: burlywood;
 }
 
-.App-link {
-  color: #61dafb;
+.content1 {
+  grid-area: cnt1;
+  background-color: cadetblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.content2 {
+  grid-area: cnt2;
+  background-color: cadetblue;
+}
+
+.content3 {
+  grid-area: cnt3;
+  background-color: cadetblue;
+}
+
+.footer {
+  grid-area: ftr;
+  background-color: cornflowerblue;
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 0.4fr;
+    grid-template-areas:
+      "hdr"
+      "sdb"
+      "main"
+      "cnt1"
+      "cnt2"
+      "cnt3"
+      "ftr";
   }
 }
